@@ -28,43 +28,12 @@ body {
   left: 0; top: 0; width: 100%; height: 100%;
 }
 
-.not-chrome-fallback {
-  margin: 50px;
-  padding: 20px;
-  max-width: 600px;
-  background-color: white;
-  color: rgba(0, 0, 0, 0.87);
-  font-family: "Times New Roman", serif;
-  box-shadow: 0 14px 28px rgba(255,255,255,0.25), 0 10px 10px rgba(255,255,255,0.22);
-
-  display: none;
-  opacity: 0;
-
-  -webkit-transition: opacity 800ms;
-  transition: opacity 800ms;
+.rate-control {
+  position: fixed;
+  left: 0; width: 100%; text-align: center;
+  bottom: 120px;
+  z-index: 1;
 }
-  .not-chrome-fallback a {
-    color: rgba(255, 0, 130, 0.87);
-    text-decoration: none;
-  }
-    .not-chrome-fallback a:hover, .not-chrome-fallback a:focus {
-      text-decoration: underline;
-    }
-
-  .not-chrome-message {
-    font-size: 18px;
-    line-height: 1.4;
-  }
-
-  .not-chrome-fallback ul {
-    list-style: none;
-    font-size: 16px;
-    margin: 0; padding: 0;
-  }
-
-    .not-chrome-fallback ul li {
-      margin: 15px 5px;
-    }
 
 .loading-message {
   position: fixed; top: 50%; left: 50%;
