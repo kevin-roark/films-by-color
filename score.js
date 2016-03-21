@@ -13,3 +13,5 @@ audioSegment.loop = true;
 
 renderer.scheduleSegmentRender(colorSegment, 2000);
 renderer.scheduleSegmentRender(audioSegment, 2000);
+
+console.log(colorSegment);
