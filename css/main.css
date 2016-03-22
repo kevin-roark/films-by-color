@@ -28,6 +28,32 @@ body {
   left: 0; top: 0; width: 100%; height: 100%;
 }
 
+.transparent {
+  opacity: 0;
+}
+
+.red { color: red; }
+.orange { color: orange; }
+.yellow { color: yellow; }
+.green { color: green; }
+.blue { color: blue; }
+.indigo { color: indigo; }
+.violet { color: violet; }
+
+.film-title {
+  position: fixed;
+  left: 0; width: 100%; text-align: center;
+  top: 20%;
+
+  font-family: "Times New Roman", serif;
+  font-size: 72px;
+
+  -o-transition: opacity 800ms;
+  -moz-transition: opacity 800ms;
+  -webkit-transition: opacity 800ms;
+  transition: opacity 800ms;
+}
+
 .rate-control {
   position: fixed;
   left: 50%; width: 400px; margin-left: -200px;
@@ -39,21 +65,7 @@ body {
   margin-top: 20px;
   font-family: 'Roboto Mono', monospace;
   font-size: 64px;
-  color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.loading-message {
-  position: fixed; top: 50%; left: 50%;
-  -webkit-transform: translate(-50%, -59.5%);
-  transform: translate(-50%, -59.5%);
-
-  font-size: 36px;
-  color: rgba(255, 0, 130, 0.87);
-  text-shadow: 0 14px 28px rgba(255,255,255,0.5), 0 10px 10px rgba(255,255,255,0.4);
-
-  -webkit-transition: opacity 800ms;
-  transition: opacity 800ms;
 }
 
 /* cool tool http://danielstern.ca/range.css/#/ */
@@ -71,11 +83,9 @@ input[type=range].slider::-webkit-slider-runnable-track {
   cursor: pointer;
   background: #ffffad;
   border-radius: 2px;
-  border: 0px solid #010101;
 }
 input[type=range].slider::-webkit-slider-thumb {
   box-shadow: 2.7px 2.7px 4.1px rgba(255, 165, 165, 0.7), 0px 0px 2.7px rgba(255, 191, 191, 0.7);
-  border: 0px solid #ff95a7;
   height: 20px;
   width: 19px;
   border-radius: 2px;
@@ -93,11 +103,9 @@ input[type=range].slider::-moz-range-track {
   cursor: pointer;
   background: #ffffad;
   border-radius: 2px;
-  border: 0px solid #010101;
 }
 input[type=range].slider::-moz-range-thumb {
   box-shadow: 2.7px 2.7px 4.1px rgba(255, 165, 165, 0.7), 0px 0px 2.7px rgba(255, 191, 191, 0.7);
-  border: 0px solid #ff95a7;
   height: 20px;
   width: 19px;
   border-radius: 2px;
@@ -114,23 +122,19 @@ input[type=range].slider::-ms-track {
 }
 input[type=range].slider::-ms-fill-lower {
   background: #ffffad;
-  border: 0px solid #010101;
   border-radius: 4px;
 }
 input[type=range].slider::-ms-fill-upper {
   background: #ffffad;
-  border: 0px solid #010101;
   border-radius: 4px;
 }
 input[type=range].slider::-ms-thumb {
   box-shadow: 2.7px 2.7px 4.1px rgba(255, 165, 165, 0.7), 0px 0px 2.7px rgba(255, 191, 191, 0.7);
-  border: 0px solid #ff95a7;
   height: 20px;
   width: 19px;
   border-radius: 2px;
   background: rgba(255, 67, 95, 0.93);
   cursor: pointer;
-  height: 18px;
 }
 input[type=range].slider:focus::-ms-fill-lower {
   background: #ffffad;

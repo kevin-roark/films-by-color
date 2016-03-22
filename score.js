@@ -32,15 +32,30 @@ var track = frampton.util.choice(mediaConfig.audio);
 var audioSegment = new frampton.AudioSegment(track);
 audioSegment.loop = true;
 
+renderer.scheduleSegmentRender(colorSegment, 2000);
+renderer.scheduleSegmentRender(audioSegment, 2000);
+
 var logSlider = new LogSlider({
   minval: 0.05,
   maxval: 100
 });
 
 var playbackRateEl = document.querySelector('.playback-rate');
-
 var rateInput = document.querySelector('#rate-input');
+var titleEl = document.querySelector('.film-title');
+
 rateInput.value = logSlider.position(1.0);
+
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+colors.forEach(function(color) {
+  if (window.location.indexOf(color) >= 0) {
+    titleEl.classList.add(color);
+    rateInput.classList.add(color);
+    playbackRateEl.classList.add(color);
+
+    titleEl.textContent = color;
+  }
+});
 
 rateInput.onchange = rateInput.oninput = function() {
   var rate = logSlider.value(rateInput.value);
@@ -51,5 +66,6 @@ rateInput.onchange = rateInput.oninput = function() {
   audioSegment.setPlaybackRate(rate);
 };
 
-renderer.scheduleSegmentRender(colorSegment, 2000);
-renderer.scheduleSegmentRender(audioSegment, 2000);
+setTimeout(function() {
+  titleEl.classList.add('transparent');
+}, 4000);
