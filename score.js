@@ -21,7 +21,10 @@ LogSlider.prototype.position = function(value) {
 /// Score
 
 var renderer = new frampton.Renderer({
-  mediaConfig: mediaConfig
+  mediaConfig: mediaConfig,
+  videoSourceMaker: function(filename) {
+    return '/media/' + filename;
+  }
 });
 
 var color = frampton.util.choice(mediaConfig.colors);
@@ -48,7 +51,7 @@ rateInput.value = logSlider.position(1.0);
 
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 colors.forEach(function(color) {
-  if (window.location.indexOf(color) >= 0) {
+  if (window.location.pathname.indexOf(color) >= 0) {
     titleEl.classList.add(color);
     rateInput.classList.add(color);
     playbackRateEl.classList.add(color);
