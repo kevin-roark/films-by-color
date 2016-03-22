@@ -35,6 +35,11 @@ body {
   z-index: 1;
 }
 
+.playback-rate {
+  margin-top: 20px;
+  color: white;
+}
+
 .loading-message {
   position: fixed; top: 50%; left: 50%;
   -webkit-transform: translate(-50%, -59.5%);
