@@ -30,21 +30,26 @@ body {
 
 .transparent {
   opacity: 0;
+
+  -o-transition: opacity 800ms;
+  -moz-transition: opacity 800ms;
+  -webkit-transition: opacity 800ms;
+  transition: opacity 800ms;
 }
 
-.red { color: red; }
+.red { color: rgb(255, 0, 0); }
 .orange { color: orange; }
 .yellow { color: yellow; }
-.green { color: green; }
-.blue { color: blue; }
+.green { color: rgb(0, 255, 0); }
+.blue { color: rgb(0, 0, 255); }
 .indigo { color: indigo; }
 .violet { color: violet; }
 
-.red-background { background-color: red; }
+.red-background { background-color: rgb(255, 0, 0); }
 .orange-background { background-color: orange; }
 .yellow-background { background-color: yellow; }
-.green-background { background-color: green; }
-.blue-background { background-color: blue; }
+.green-background { background-color: rgb(0, 255, 0); }
+.blue-background { background-color: rgb(0, 0, 255); }
 .indigo-background { background-color: indigo; }
 .violet-background { background-color: violet; }
 
@@ -112,15 +117,11 @@ body {
 .film-title {
   position: fixed;
   left: 0; width: 100%; text-align: center;
-  top: 20%;
+  top: 15%;
 
   font-family: "Times New Roman", serif;
   font-size: 72px;
-
-  -o-transition: opacity 800ms;
-  -moz-transition: opacity 800ms;
-  -webkit-transition: opacity 800ms;
-  transition: opacity 800ms;
+  z-index: 1;
 }
 
 .rate-control {
@@ -135,6 +136,26 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-size: 64px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.loading-indicator {
+  position: fixed;
+  left: 50%; width: 300px; margin-left: -150px;
+  top: 50%; height: 300px; margin-top: -150px;
+  border-radius: 150px;
+  color: white;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  line-height: 300px;
+  box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.75);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+
+  -o-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
 }
 
 /* cool tool http://danielstern.ca/range.css/#/ */

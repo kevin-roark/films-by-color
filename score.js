@@ -22,6 +22,7 @@ LogSlider.prototype.position = function(value) {
 
 var renderer = new frampton.Renderer({
   mediaConfig: mediaConfig,
+  timeToLoadVideo: 15000,
   videoSourceMaker: function(filename) {
     return '/media/' + filename;
   }
@@ -35,19 +36,13 @@ var track = frampton.util.choice(mediaConfig.audio);
 var audioSegment = new frampton.AudioSegment(track);
 audioSegment.loop = true;
 
-renderer.scheduleSegmentRender(colorSegment, 2000);
-renderer.scheduleSegmentRender(audioSegment, 2000);
-
-var logSlider = new LogSlider({
-  minval: 0.05,
-  maxval: 100
-});
+var loadTime = 15000;
+renderer.scheduleSegmentRender(colorSegment, loadTime);
+renderer.scheduleSegmentRender(audioSegment, loadTime);
 
 var playbackRateEl = document.querySelector('.playback-rate');
 var rateInput = document.querySelector('#rate-input');
 var titleEl = document.querySelector('.film-title');
-
-rateInput.value = logSlider.position(1.0);
 
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 colors.forEach(function(color) {
@@ -56,9 +51,30 @@ colors.forEach(function(color) {
     rateInput.classList.add(color);
     playbackRateEl.classList.add(color);
 
-    titleEl.textContent = color;
+    titleEl.textContent = color.charAt(0).toUpperCase() + color.slice(1);
   }
 });
+
+var loadingIndicator = document.querySelector('.loading-indicator');
+
+var colorIndex = 0;
+function changeLoadingColor() {
+  loadingIndicator.classList.remove(colors[colorIndex] + '-background');
+
+  colorIndex = (colorIndex + 1) % colors.length;
+
+  loadingIndicator.classList.add(colors[colorIndex] + '-background');
+}
+
+changeLoadingColor();
+var loadingInterval = setInterval(changeLoadingColor, 1000);
+
+var logSlider = new LogSlider({
+  minval: 0.05,
+  maxval: 100
+});
+
+rateInput.value = logSlider.position(1.0);
 
 rateInput.onchange = rateInput.oninput = function() {
   var rate = logSlider.value(rateInput.value);
@@ -70,5 +86,14 @@ rateInput.onchange = rateInput.oninput = function() {
 };
 
 setTimeout(function() {
+  loadingIndicator.classList.add('transparent');
+  clearInterval(loadingInterval);
+}, loadTime);
+
+setTimeout(function() {
   titleEl.classList.add('transparent');
-}, 4000);
+}, loadTime + 5000);
+
+setTimeout(function() {
+  document.querySelector('.rate-control').style.opacity = 1.0;
+}, loadTime + 12000);
