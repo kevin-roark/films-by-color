@@ -57,6 +57,13 @@ body {
  * HOME
  */
 
+.art-title {
+  position: absolute;
+  left: 15px; top: 15px;
+  font-family: "Times New Roman", serif;
+  font-size: 22px;
+}
+
 .color-wrapper {
   position: absolute;
   left: 50%; margin-left: -534px; width: 1068px;
