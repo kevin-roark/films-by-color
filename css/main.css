@@ -40,6 +40,75 @@ body {
 .indigo { color: indigo; }
 .violet { color: violet; }
 
+.red-background { background-color: red; }
+.orange-background { background-color: orange; }
+.yellow-background { background-color: yellow; }
+.green-background { background-color: green; }
+.blue-background { background-color: blue; }
+.indigo-background { background-color: indigo; }
+.violet-background { background-color: violet; }
+
+.color-wrapper {
+  position: absolute;
+  left: 50%; margin-left: -534px; width: 1068px;
+  top: 100px;
+}
+
+.color-links {
+
+}
+
+.color-link {
+  float: left;
+  margin: 0; padding: 0;
+  width: 152.5px; height: 458px;
+}
+
+.link-title {
+  font-family: "Roboto Mono", monospace;
+  font-size: 72px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about {
+  position: fixed; bottom: 12px; right: 12px;
+  font-family: "Helvetica", sans-serif;
+}
+
+.artist {
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.friends {
+  max-width: 350px;
+  font-size: 14px; line-height: 1.25;
+}
+
+.friends a, .artist a {
+  color: inherit;
+  text-decoration: underline;
+
+  -o-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+  .friends a:hover, .friends a:focus, .artist a:hover, .artist a:focus {
+    color: rgb(17, 33, 255);
+  }
+
+.social {
+  position: absolute; top: 12px; right: 12px;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+  z-index: 100000001;
+}
+  .social-button {
+    padding: 5px;
+    text-align: right;
+  }
+
 .film-title {
   position: fixed;
   left: 0; width: 100%; text-align: center;
