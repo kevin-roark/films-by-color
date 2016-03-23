@@ -61,7 +61,7 @@
     colorLink.onmouseover = function() {
       if (!isOver) {
         img.style.display = 'block';
-        linkTitleEl.style.color = colorInfo.color;
+        linkTitleEl.classList.add(colorInfo.color);
         linkTitleEl.textContent = colorInfo.title;
         isOver = true;
       }
@@ -70,6 +70,7 @@
     colorLink.onmouseout = function() {
       if (isOver) {
         img.style.display = 'none';
+        linkTitleEl.classList.remove(colorInfo.color);
         linkTitleEl.textContent = '';
         isOver = false;
       }
