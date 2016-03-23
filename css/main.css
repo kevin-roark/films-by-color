@@ -137,16 +137,17 @@ body {
 
 .rate-control {
   position: fixed;
-  left: 50%; width: 400px; margin-left: -200px;
-  bottom: 120px;
+  bottom: 20px; right: 20px;
+  width: 400px;
   z-index: 1;
 }
 
 .playback-rate {
-  margin-top: 20px;
+  margin-top: 5px;
   font-family: 'Roboto Mono', monospace;
-  font-size: 64px;
+  font-size: 48px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: right;
 }
 
 .loading-indicator {
@@ -167,6 +168,13 @@ body {
   -moz-transition: all 1s linear;
   -webkit-transition: all 1s linear;
   transition: all 1s linear;
+}
+
+.progress-bar {
+  position: fixed;
+  bottom: 0; left: 0;
+  height: 5px; width: 1%;
+  z-index: 1;
 }
 
 /* cool tool http://danielstern.ca/range.css/#/ */
