@@ -51,19 +51,23 @@ colors.forEach(function(color) {
     rateInput.classList.add(color);
     playbackRateEl.classList.add(color);
 
-    titleEl.textContent = color.charAt(0).toUpperCase() + color.slice(1);
+    titleEl.textContent = 'Chromatic Reduction: ' + color.charAt(0).toUpperCase() + color.slice(1);
   }
 });
 
 var loadingIndicator = document.querySelector('.loading-indicator');
 
 var colorIndex = 0;
+var degrees = 0;
 function changeLoadingColor() {
   loadingIndicator.classList.remove(colors[colorIndex] + '-background');
 
   colorIndex = (colorIndex + 1) % colors.length;
 
   loadingIndicator.classList.add(colors[colorIndex] + '-background');
+
+  degrees += 90;
+  loadingIndicator.style.transform = loadingIndicator.style.webkitTransform = loadingIndicator.style.mozTransform = 'rotate(' + degrees + 'deg)';
 }
 
 changeLoadingColor();
