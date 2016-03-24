@@ -84,7 +84,7 @@ rateInput.value = logSlider.position(1.0);
 
 rateInput.onchange = rateInput.oninput = function() {
   var rate = logSlider.value(rateInput.value);
-  if (rate == 0.97) {
+  if (rate > 0.95 && rate < 1.02) {
     rate = 1.0;
   }
 
