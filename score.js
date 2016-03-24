@@ -57,6 +57,14 @@ colors.forEach(function(color) {
   }
 });
 
+var muteButton = document.querySelector('.mute-button');
+var isMuted = false;
+muteButton.onclick = function() {
+  isMuted = !isMuted;
+  muteButton.textContent = isMuted ? 'Unmute' : 'Mute';
+  audioSegment.setVolume(isMuted ? 0 : 0.8);
+};
+
 var loadingIndicator = document.querySelector('.loading-indicator');
 
 var colorIndex = 0;
@@ -96,6 +104,7 @@ rateInput.onchange = rateInput.oninput = function() {
 
 setTimeout(function() {
   loadingIndicator.classList.add('transparent');
+  muteButton.style.opacity = 1.0;
   clearInterval(loadingInterval);
 
   // var time = 0;

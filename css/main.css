@@ -181,8 +181,16 @@ body {
   position: fixed;
   top: 10px; right: 10px;
   font-family: 'Helvetica', sans-serif;
-  font-size: 13px;
-  text-decoration: underline;
+  font-size: 15px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  z-index: 1;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* cool tool http://danielstern.ca/range.css/#/ */
