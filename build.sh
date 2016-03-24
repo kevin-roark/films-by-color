@@ -9,7 +9,7 @@ do
   cp template/index.html $color/
 
   # run frampton on combo
-  ../frampton/src/cli/web-bundle.js score.js $color/media_config.json --out ./ --onlyscore
+  ../frampton/src/cli/web-bundle.js score.js $color/media_config.json --out ./ --onlyscore --allbrowsers
   mv js/build.js $color/js
 
 done
