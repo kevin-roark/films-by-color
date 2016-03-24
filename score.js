@@ -43,7 +43,7 @@ renderer.scheduleSegmentRender(audioSegment, loadTime);
 var playbackRateEl = document.querySelector('.playback-rate');
 var rateInput = document.querySelector('#rate-input');
 var titleEl = document.querySelector('.film-title');
-//var progressBar = document.querySelector('.progress-bar');
+var progressBar = document.querySelector('.progress-bar');
 
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 colors.forEach(function(color) {
@@ -51,7 +51,7 @@ colors.forEach(function(color) {
     titleEl.classList.add(color);
     rateInput.classList.add(color);
     playbackRateEl.classList.add(color);
-    //progressBar.classList.add(color + '-background');
+    progressBar.classList.add(color + '-background');
 
     titleEl.textContent = 'Chromatic Reduction: ' + color.charAt(0).toUpperCase() + color.slice(1);
   }
@@ -107,13 +107,13 @@ setTimeout(function() {
   muteButton.style.opacity = 1.0;
   clearInterval(loadingInterval);
 
-  // var time = 0;
-  // var duration = (track.duration * 1000);
-  // setInterval(function updateProgressBar() {
-  //   time = (time + (100 * audioSegment.playbackRate)) % duration;
-  //   var percent = Math.max(0.01, (time / duration));
-  //   progressBar.style.width = (percent * window.innerWidth) + 'px';
-  // }, 100);
+  var time = 0;
+  var duration = (track.duration * 1000);
+  setInterval(function updateProgressBar() {
+    time = (time + (150 * audioSegment.playbackRate)) % duration;
+    var percent = Math.max(0.01, (time / duration));
+    progressBar.style.width = (percent * window.innerWidth) + 'px';
+  }, 150);
 
 }, loadTime);
 
