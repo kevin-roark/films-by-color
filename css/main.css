@@ -135,6 +135,16 @@ body {
   z-index: 1;
 }
 
+.key-control-hint {
+  position: absolute;
+  left: 0; width: 100%; text-align: center;
+  top: 40%;
+  color: white;
+  font-size: 22px;
+  line-height: 1.75;
+  z-index: 1;
+}
+
 .rate-control {
   position: fixed;
   bottom: 20px; right: 20px;
