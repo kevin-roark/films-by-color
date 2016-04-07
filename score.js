@@ -22,21 +22,22 @@ LogSlider.prototype.position = function(value) {
 
 var renderer = new frampton.Renderer({
   mediaConfig: mediaConfig,
-  timeToLoadVideo: 15000,
+  timeToLoadVideo: 5000,
+  log: true,
   videoSourceMaker: function(filename) {
     return '/media/' + filename;
   }
 });
 
-var color = frampton.util.choice(mediaConfig.colors);
-var colorSegment = new frampton.ColorSegment(color);
+var framesData = frampton.util.choice(mediaConfig.frames);
+var colorSegment = new frampton.ColorSegment(framesData);
 colorSegment.loop = true;
 
 var track = frampton.util.choice(mediaConfig.audio);
 var audioSegment = new frampton.AudioSegment(track);
 audioSegment.loop = true;
 
-var loadTime = 15000;
+var loadTime = 5000;
 renderer.scheduleSegmentRender(colorSegment, loadTime);
 renderer.scheduleSegmentRender(audioSegment, loadTime);
 
