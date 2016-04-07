@@ -22,8 +22,7 @@ LogSlider.prototype.position = function(value) {
 
 var renderer = new frampton.Renderer({
   mediaConfig: mediaConfig,
-  timeToLoadVideo: 5000,
-  log: true,
+  timeToLoadVideo: 6666,
   videoSourceMaker: function(filename) {
     return '/media/' + filename;
   }
@@ -35,9 +34,10 @@ colorSegment.loop = true;
 
 var track = frampton.util.choice(mediaConfig.audio);
 var audioSegment = new frampton.AudioSegment(track);
+audioSegment.preferHTMLAudio = true;
 audioSegment.loop = true;
 
-var loadTime = 5000;
+var loadTime = renderer.timeToLoadVideo;
 renderer.scheduleSegmentRender(colorSegment, loadTime);
 renderer.scheduleSegmentRender(audioSegment, loadTime);
 
