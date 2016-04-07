@@ -22,21 +22,22 @@ LogSlider.prototype.position = function(value) {
 
 var renderer = new frampton.Renderer({
   mediaConfig: mediaConfig,
-  timeToLoadVideo: 15000,
+  timeToLoadVideo: 6666,
   videoSourceMaker: function(filename) {
     return '/media/' + filename;
   }
 });
 
-var color = frampton.util.choice(mediaConfig.colors);
-var colorSegment = new frampton.ColorSegment(color);
+var framesData = frampton.util.choice(mediaConfig.frames);
+var colorSegment = new frampton.ColorSegment(framesData);
 colorSegment.loop = true;
 
 var track = frampton.util.choice(mediaConfig.audio);
 var audioSegment = new frampton.AudioSegment(track);
+audioSegment.preferHTMLAudio = true;
 audioSegment.loop = true;
 
-var loadTime = 15000;
+var loadTime = renderer.timeToLoadVideo;
 renderer.scheduleSegmentRender(colorSegment, loadTime);
 renderer.scheduleSegmentRender(audioSegment, loadTime);
 
@@ -57,6 +58,8 @@ colors.forEach(function(color) {
   }
 });
 
+var rateControlEl = document.querySelector('.rate-control');
+
 var muteButton = document.querySelector('.mute-button');
 var isMuted = false;
 muteButton.onclick = function() {
@@ -64,6 +67,21 @@ muteButton.onclick = function() {
   muteButton.textContent = isMuted ? 'Unmute' : 'Mute';
   audioSegment.setVolume(isMuted ? 0 : 0.8);
 };
+
+var controlsAreHidden = true;
+window.addEventListener('keypress', function(ev) {
+  switch (ev.which) {
+    case 32:
+      controlsAreHidden = !controlsAreHidden;
+      muteButton.style.opacity = rateControlEl.style.opacity = controlsAreHidden ? 0.0 : 1.0;
+      break;
+
+    case 115:
+      rateInput.value = logSlider.position(1.0);
+      setPlaybackRate(1.0);
+      break;
+  }
+}, false);
 
 var loadingIndicator = document.querySelector('.loading-indicator');
 
@@ -96,15 +114,18 @@ rateInput.onchange = rateInput.oninput = function() {
     rate = 1.0;
   }
 
+  setPlaybackRate(rate);
+};
+
+function setPlaybackRate(rate) {
   playbackRateEl.textContent = (Math.round(rate * 100) / 100) + 'x';
 
   colorSegment.setPlaybackRate(rate);
   audioSegment.setPlaybackRate(rate);
-};
+}
 
 setTimeout(function() {
   loadingIndicator.classList.add('transparent');
-  muteButton.style.opacity = 1.0;
   clearInterval(loadingInterval);
 
   var time = 0;
@@ -118,9 +139,13 @@ setTimeout(function() {
 }, loadTime);
 
 setTimeout(function() {
-  titleEl.classList.add('transparent');
-}, loadTime + 5000);
+  var keyControlHint = document.querySelector('.key-control-hint');
+  keyControlHint.style.opacity = 1.0;
+  setTimeout(function() {
+    keyControlHint.style.opacity = 0.0;
+  }, 5000);
+}, loadTime + 4700);
 
 setTimeout(function() {
-  document.querySelector('.rate-control').style.opacity = 1.0;
-}, loadTime + 12000);
+  titleEl.classList.add('transparent');
+}, loadTime + 3000);
