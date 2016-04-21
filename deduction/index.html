@@ -338,7 +338,34 @@
         <a class="film-link film-link-100x" href="https://www.youtube.com/watch?v=GnHuzg0JkxM" target="_blank">100x</a>
       </li>
     </ul>
+  </div>
 
+  <div class="sorting-notes">
+    <h2>Notes on Sorting Methods</h2>
+    <p>
+      <b>Hue</b> -
+      sort colors by their hue value in hsl color space, secondary sort by saturation when colors have equal hue values, and lightness if colors have equal saturation and hue values.
+    </p>
+    <p>
+      <b>HuePlus</b> -
+      create a weighted number from a color’s hsl representation as follows: "hue + saturation * 2 + lightness * 0.5", and then sort by that number.
+    </p>
+    <p>
+      <b>Step</b> -
+      equivalent to hue sorting, but uses luminosity as the first secondary sort parameter, and inverts the luminosity of every other hue section to achieve a continuous-appearing spectrum.
+    </p>
+    <p>
+      <b>Color Distance</b> -
+      similar-ish to HuePlus, create a weighted number from color's hsl representation with a heavy balance on hue and a zero-weight applied to saturation. Uses the difference in this number between colors to measure distance and sort.
+    </p>
+    <p>
+      <b>Hilbert</b> -
+      use color's rgb values as xyz coordinates and transform them to a single point on a Hilbert Curve and sort by that point :)
+    </p>
+    <p>
+      Lots of one-way help from Alan Z with color sorting. You can read more details about some of the methods
+      <a href="http://www.alanzucconi.com/2015/09/30/colour-sorting/" target="_blank">here</a>.
+    </p>
   </div>
 
   <div class="about">
