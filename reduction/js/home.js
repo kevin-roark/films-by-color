@@ -5,37 +5,37 @@
     'red-color-link': {
       title: 'Red',
       color: 'red',
-      img: 'media/color-slices/red.png'
+      img: '/media/color-slices/red.png'
     },
     'orange-color-link': {
       title: 'Mad Max',
       color: 'orange',
-      img: 'media/color-slices/orange.png'
+      img: '/media/color-slices/orange.png'
     },
     'yellow-color-link': {
       title: 'Minions',
       color: 'yellow',
-      img: 'media/color-slices/yellow.png'
+      img: '/media/color-slices/yellow.png'
     },
     'green-color-link': {
       title: 'Shrek',
       color: 'green',
-      img: 'media/color-slices/green.png'
+      img: '/media/color-slices/green.png'
     },
     'blue-color-link': {
       title: 'Deep Blue Sea',
       color: 'blue',
-      img: 'media/color-slices/blue.png'
+      img: '/media/color-slices/blue.png'
     },
     'indigo-color-link': {
       title: 'Spring Breakers',
       color: 'indigo',
-      img: 'media/color-slices/indigo.png'
+      img: '/media/color-slices/indigo.png'
     },
     'violet-color-link': {
       title: 'Raw Nerves: A Lacanian Thriller',
       color: 'violet',
-      img: 'media/color-slices/violet.png'
+      img: '/media/color-slices/violet.png'
     }
   };
 
