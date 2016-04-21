@@ -1,0 +1,177 @@
+html, body {
+  width: 100%; height: 100%;
+  margin: 0; padding: 0;
+}
+
+.art-description {
+  margin: 20px;
+  font-size: 14px;
+  font-family: "Helvetica", sans-serif;
+  max-width: 300px;
+}
+
+  .art-title {
+    font-size: 28px;
+    font-family: "Times New Roman", serif;
+  }
+
+  .art-description p {
+    margin-top: 15px;
+    line-height: 1.3;
+  }
+
+.deduction-table {
+  margin-bottom: 140px;
+  min-width: 1200px;
+}
+
+  .deduction-row {
+    list-style: none;
+    margin: 50px 20px;
+    padding: 0;
+  }
+    .deduction-row li {
+      display: inline-block;
+      margin: 0 30px;
+      width: 120px;
+      text-align: center;
+      vertical-align: middle;
+      font-family: "Roboto Mono", monospace;
+      font-size: 24px;
+    }
+    .deduction-row li.film-deduction-row-title {
+      text-align: right;
+      width: 160px;
+    }
+    .deduction-row li.deduction-link-cell {
+      position: relative;
+      height: 120px;
+      background-size: cover;
+    }
+
+    .deduction-row li.hue-link-cell {
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25), 0px 3px 5px 1px rgba(255,0,0,0.75);
+    }
+    .deduction-row li.hue-plus-link-cell {
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25), 0px 3px 5px 1px rgba(255,100,0,0.75);
+    }
+    .deduction-row li.step-link-cell {
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25), 0px 3px 5px 1px rgba(0,255,0,0.75);
+    }
+    .deduction-row li.color-distance-link-cell {
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25), 0px 3px 5px 1px rgba(0,0,255,0.75);
+    }
+    .deduction-row li.hilbert-link-cell {
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25), 0px 3px 5px 1px rgba(255,0,255,0.75);
+    }
+
+    .link-cell-rainbow-background {
+      position: absolute;
+      left: 0; top: 0; width: 100%; height: 100%;
+      opacity: 0;
+      background-size: cover;
+      background-image: url(media/rainbow.jpg);
+    }
+
+    .film-link {
+      position: absolute;
+      display: block;
+      width: 50%; height: 50%;
+      text-align: center;
+      line-height: 60px;
+      opacity: 0;
+
+      font-family: "Roboto Mono", monospace;
+      font-size: 20px;
+      color: white;
+
+      -o-transition: color 0.4s;
+      -moz-transition: color 0.4s;
+      -webkit-transition: color 0.4s;
+      transition: color 0.4s;
+    }
+      .film-link:hover, .film-link:focus {
+        color: black;
+      }
+    .film-link-1x {
+      left: 0; top: 0;
+    }
+    .film-link-5x {
+      left: 50%; top: 0;
+    }
+    .film-link-25x {
+      left: 0; top: 50%;
+    }
+    .film-link-100x {
+      left: 50%; top: 50%;
+    }
+    .film-link-only {
+      left: 25%; top: 25%;
+    }
+
+    .deduction-row li.deduction-link-cell:hover .link-cell-rainbow-background, .deduction-row li.deduction-link-cell:focus .link-cell-rainbow-background {
+      opacity: 0.7;
+    }
+
+    .deduction-row li.deduction-link-cell:hover .film-link, .deduction-row li.deduction-link-cell:focus .film-link {
+      opacity: 1;
+    }
+
+    .hero-deduction-row li.deduction-link-cell {
+      background-image: url(media/hero.jpg);
+    }
+    .speed-racer-deduction-row li.deduction-link-cell {
+      background-image: url(media/speedracer.jpg);
+    }
+    .perception-deduction-row li.deduction-link-cell {
+      background-image: url(media/hero.jpg);
+    }
+    .molten-deduction-row li.deduction-link-cell {
+      background-image: url(media/hero.jpg);
+    }
+    .raygun-deduction-row li.deduction-link-cell {
+      background-image: url(media/hero.jpg);
+    }
+    .nightmusic-deduction-row li.deduction-link-cell {
+      background-image: url(media/hero.jpg);
+    }
+
+.about {
+  position: fixed; bottom: 12px; right: 12px;
+  font-family: "Helvetica", sans-serif;
+}
+
+.artist {
+  text-align: right;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.friends {
+  max-width: 400px;
+  font-size: 14px; line-height: 1.25;
+}
+
+.friends a, .artist a {
+  color: inherit;
+  text-decoration: underline;
+
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+  .friends a:hover, .friends a:focus, .artist a:hover, .artist a:focus {
+    color: rgb(17, 33, 255);
+  }
+
+.social {
+  position: absolute; top: 12px; right: 12px;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+  z-index: 100000001;
+}
+  .social-button {
+    padding: 5px;
+    text-align: right;
+  }

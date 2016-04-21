@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" type="image/png" href="/media/favicon.png?v=1.1">
-  <title>Chromatic DEREDUCTION — Carmichael Payamps</title>
+  <title>Chromatic Reduction — Carmichael Payamps</title>
 
-  <meta name="description" content="Chromatic Reduction and Chromatic Deduction are sister projects that reinterpret films with color." />
+  <meta name="description" content="Chromatic Reduction reduces 7 films across a rainbow spectrum to their colorful core, rendering each frame as a single representative pixel into an Abstract ColorStream." />
   <meta name="author" content="Carmichael Payamps">
-  <meta name="keywords" content="Carmichael Payamps, Chromatic Reduction, Chromatic Deduction">
+  <meta name="keywords" content="Carmichael Payamps, Fffight, Site, fffight.site">
 
-  <meta property="og:title" content="Chromatic DEREDUCTION - Carmichael Payamps" />
+  <meta property="og:title" content="Chromatic Reduction - Carmichael Payamps" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://www.colors.black/media/screenshot1.jpg" />
-  <meta property="og:description" content="Chromatic Reduction and Chromatic Deduction are sister projects that reinterpret films with color." />
-  <meta property="og:url" content="http://www.colors.black/" />
+  <meta property="og:description" content="Chromatic Reduction reduces 7 films across a rainbow spectrum to their colorful core, , rendering each frame as a single representative pixel into an Abstract ColorStream." />
+  <meta property="og:url" content="http://www.colors.black/reduction" />
 
   <meta property="fb:admins" content="100000919641751" />
 
@@ -24,9 +24,30 @@
   <meta name="twitter:creator" content="@LIMP__BISCUIT" />
 </head>
 <body style="background-color: white;">
-  <div class="dereduction-root-container">
-    <a class="dereduction-link dereduction-reduction-link" href="http://www.colors.black/reduction/">Chromatic Reduction</a>
-    <a class="dereduction-link dereduction-deduction-link" href="http://www.colors.black/deduction/">Chromatic Deduction</a>
+  <div class="art-title">Chromatic Reduction</div>
+
+  <div class="color-wrapper">
+    <div class="color-links">
+      <a class="color-link red-background" id="red-color-link" href="red/" target="_blank"></a>
+      <a class="color-link orange-background" id="orange-color-link" href="orange/" target="_blank"></a>
+      <a class="color-link yellow-background" id="yellow-color-link" href="yellow/" target="_blank"></a>
+      <a class="color-link green-background" id="green-color-link" href="green/" target="_blank"></a>
+      <a class="color-link blue-background" id="blue-color-link" href="blue/" target="_blank"></a>
+      <a class="color-link indigo-background" id="indigo-color-link" href="indigo/" target="_blank"></a>
+      <a class="color-link violet-background" id="violet-color-link" href="violet/" target="_blank"></a>
+    </div>
+
+    <div class="link-title"></div>
+  </div>
+
+  <div class="about">
+    <div class="artist">made by <a target="_blank" href="http://www.carmichael.xyz">Carmichael Payamps</a></div>
+    <div class="friends">
+      friends with
+      <a target="_blank" href="http://www.fffight.site">fffight.site</a>,
+      <a target="_blank" href="http://www.lifeislife.xyz">Life in Review</a>,
+      <a target="_blank" href="http://www.gods.website">God's Website</a>
+    </div>
   </div>
 
   <div class="social">
@@ -38,26 +59,7 @@
     </div>
   </div>
 
-  <script>
-    (function() {
-      var dereductionLinks = document.querySelectorAll('.dereduction-link');
-
-      var colors = ['rgb(255,0,0)', 'rgb(255,255,0)', 'rgb(0,255,0)', 'rgb(0,255,255)', 'rgb(0,0,255)', 'rgb(255,0,255)'];
-      var colorIndex = 0;
-
-      setTimeout(changeColor, 3000);
-
-      function changeColor() {
-        for (var i = 0; i < dereductionLinks.length; i++) {
-          dereductionLinks[i].style.color = colors[colorIndex];
-        }
-
-        colorIndex = (colorIndex + 1) % colors.length;
-
-        setTimeout(changeColor, 800);
-      }
-    })();
-  </script>
+  <script src="js/home.js"></script>
   <script>(function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;

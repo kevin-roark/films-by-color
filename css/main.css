@@ -54,6 +54,31 @@ body {
 .violet-background { background-color: violet; }
 
 /**
+ * ROOT
+ */
+.dereduction-link {
+  position: fixed;
+
+  font-family: "Roboto Mono", monospace;
+  font-size: 72px;
+  color: black;
+
+  -o-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+  .dereduction-link:hover, .dereduction-link:focus {
+    color: rgb(17, 33, 255);
+  }
+  .dereduction-reduction-link {
+    left: 20px; top: 60px;
+  }
+  .dereduction-deduction-link {
+    left: 140px; top: 280px;
+  }
+
+/**
  * HOME
  */
 
