@@ -38,26 +38,6 @@
     </div>
   </div>
 
-  <script>
-    (function() {
-      var dereductionLinks = document.querySelectorAll('.dereduction-link');
-
-      var colors = ['rgb(255,0,0)', 'rgb(255,255,0)', 'rgb(0,255,0)', 'rgb(0,255,255)', 'rgb(0,0,255)', 'rgb(255,0,255)'];
-      var colorIndex = 0;
-
-      setTimeout(changeColor, 3000);
-
-      function changeColor() {
-        for (var i = 0; i < dereductionLinks.length; i++) {
-          dereductionLinks[i].style.color = colors[colorIndex];
-        }
-
-        colorIndex = (colorIndex + 1) % colors.length;
-
-        setTimeout(changeColor, 800);
-      }
-    })();
-  </script>
   <script>(function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
