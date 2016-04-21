@@ -22,6 +22,7 @@ html, body {
 
 .deduction-table {
   margin-bottom: 140px;
+  min-width: 1200px;
 }
 
   .deduction-row {
@@ -103,6 +104,9 @@ html, body {
     }
     .film-link-100x {
       left: 50%; top: 50%;
+    }
+    .film-link-only {
+      left: 25%; top: 25%;
     }
 
     .deduction-row li.deduction-link-cell:hover .link-cell-rainbow-background, .deduction-row li.deduction-link-cell:focus .link-cell-rainbow-background {
