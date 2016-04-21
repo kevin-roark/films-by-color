@@ -123,17 +123,23 @@ html, body {
     .speed-racer-deduction-row li.deduction-link-cell {
       background-image: url(media/speedracer.jpg);
     }
+    .fou-deduction-row li.deduction-link-cell {
+      background-image: url(media/fou.jpg);
+    }
     .perception-deduction-row li.deduction-link-cell {
-      background-image: url(media/hero.jpg);
+      background-image: url(media/perception.jpg);
+    }
+    .dogstar-deduction-row li.deduction-link-cell {
+      background-image: url(media/dogstarman.jpg);
     }
     .molten-deduction-row li.deduction-link-cell {
-      background-image: url(media/hero.jpg);
+      background-image: url(media/molten.jpg);
     }
     .raygun-deduction-row li.deduction-link-cell {
-      background-image: url(media/hero.jpg);
+      background-image: url(media/raygun.jpg);
     }
     .nightmusic-deduction-row li.deduction-link-cell {
-      background-image: url(media/hero.jpg);
+      background-image: url(media/nightmusic.jpg);
     }
 
 .about {
